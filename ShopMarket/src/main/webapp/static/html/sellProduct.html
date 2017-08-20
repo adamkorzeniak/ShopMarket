@@ -1,0 +1,11 @@
+<div>
+	<form novalidate >
+	    <label for="name">Name: </label>
+	    <input id="name" class="field" type="text" ng-model="vm.product.name" /><br/>
+	    <label>Description: </label>
+	    <input class="field" type="text" ng-model="vm.product.description" /><br/>
+	    <label>Price: </label>
+	    <input class="field" type="text" ng-model="vm.product.price" /><br/>
+	    <input type="submit" ng-click="vm.addProduct(vm.product)" value="Save" />
+	</form>
+</div>

@@ -1,0 +1,12 @@
+<div>
+	<form novalidate >
+	    <label for="username">Username: </label>
+	    <input id="username" class="field" type="text" ng-model="vm.user.username" /><br/>
+	    <label>Password: </label>
+	    <input class="field" type="password" ng-model="vm.user.password" /><br/>
+	    <label for="rememberme">Remember me</label>
+   	    <!-- <input class="field" name="rememberme" type="checkbox" ng-model="vm.rememberme" /><br/> -->
+	    <input type="submit" ng-click="vm.login()" value="Sign in" />
+	    <!-- <input type="submit" ng-click="vm.forgotPassword()" value="Forgot Password" /> -->
+	</form>
+</div>

@@ -1,0 +1,18 @@
+<div>
+	<div ng-if="vm.searchQuery">Search phrase is {{vm.searchQuery}} <button ng-click="vm.clearSearch()">Clear Search</button></div>
+	<div ng-if="!vm.searchQuery" class="product" ng-class="{selfOwned: product.selfOwned}" ng-repeat="product in vm.products" >
+		<div >Product Name: {{product.name}}</div>
+		<div>Product Price: {{product.price}} $</div>
+		<div>Product Description: {{product.description}}</div>
+		<div>Product Owner: {{product.ownerUsername}}</div>
+		<button ng-if="!product.selfOwned" ng-click="vm.addToCart(product)">Add To Cart</button>
+	</div>
+	
+	<div ng-if="vm.searchQuery" class="product" ng-class="{selfOwned: product.selfOwned}" ng-repeat="product in vm.searchedProducts" >
+		<div >Product Name: {{product.name}}</div>
+		<div>Product Price: {{product.price}} $</div>
+		<div>Product Description: {{product.description}}</div>
+		<div>Product Owner: {{product.ownerUsername}}</div>
+		<button ng-if="!product.selfOwned" ng-click="vm.addToCart(product)">Add To Cart</button>
+	</div>
+</div>

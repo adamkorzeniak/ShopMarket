@@ -1,0 +1,28 @@
+<div>
+	<form ng-if="!vm.registered" name="form" ng-submit="vm.register(vm.user)">
+		<label for="username">Username: </label> 
+		<input ng-change="vm.usernameTaken=false" id="username" name="username" class="field" type="text" ng-model="vm.user.username" required /> 
+		<span ng-show="form.$submitted && form.username.$error.required">Enter your username.</span>
+		<span ng-show="vm.usernameTaken">Username not available</span><br /> 
+		<label for="email">Email: </label> 
+		<input ng-change="vm.emailTaken=false" class="field" type="email" name="email" ng-model="vm.user.email" required/>
+		<span ng-show="form.$submitted && form.email.$error.required">Enter your Email.</span> 
+		<span ng-show="form.$submitted && !form.email.$error.required && form.email.$invalid">Incorrect Format.</span>
+		<span ng-show="vm.emailTaken">Email not available</span><br /> 
+		<label for="password">Password: </label> 
+		<input ng-change="vm.comparePasswords()" class="field" type="password" name="password" ng-model="vm.user.password" required />
+		<span ng-show="form.$submitted && form.password.$error.required">Enter your Password.</span><br /> 
+		<label for="passwordConfirm">Confirm Password: </label> 
+		<input ng-change="vm.comparePasswords()" class="field" type="password" name="passwordConfirm" ng-model="vm.user.passwordConfirm" required />
+		<span ng-show="form.$submitted && form.passwordConfirm.$error.required">Confirm password.</span>
+		<span ng-show="form.$submitted && !form.password.$error.required && !form.passwordConfirm.$error.required && !vm.passwordMatch">Password do not match.</span><br /> 
+		<input type="submit"  value="Sign up" />
+	</form>
+	<button class="field" ng-if="!vm.registered" ng-click="vm.registered = true">Confirm Registration via Token</button>
+	<form ng-if="vm.registered" novalidate name="token" ng-submit="vm.confirm()">
+		<label for="token">Token: </label> 
+		<input id="token" name="token" class="field" type="text" ng-model="vm.token" required />		
+		<input type="submit"  value="Confirm" />
+	</form>
+	<button class="field" ng-if="vm.registered" ng-click="vm.registered = false">Register Account</button>
+</div>

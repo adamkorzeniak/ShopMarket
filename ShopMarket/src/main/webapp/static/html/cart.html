@@ -1,0 +1,9 @@
+<div>
+	<div class="product" ng-repeat="product in vm.productsInCart">
+		<div>Product Name: {{product.name}}</div>
+		<div>Product Price: {{product.price}} $</div>
+		<div>Product Description: {{product.description}}</div>
+		<button ng-click="vm.remove(product)">Remove</button>
+	</div>
+	<div ng-if="vm.totalCost > 0">Total Cost: {{vm.totalCost}}</div>
+</div>

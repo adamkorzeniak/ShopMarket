@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	width: 100%;
+	background-color: lightgreen;
+	top: 0;
+	padding: 0 20px;
+	position: fixed;
+}
+
+ul li {
+	display: inline-block;
+	margin: 5px 20px;
+	padding: 10px 20px;
+	color: black;
+}
+
+.float-right {
+	float: right;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: darkblue;
+}
+
+[type="search"] {
+	margin-left: 10px;
+}
+
+.content {
+	margin-top: 70px;
+}
+.product {
+	margin: 20px;
+	padding: 10px;
+}
+.selfOwned {
+	background-color: red;
+}
+
+.field {
+	margin: 5px;
+}
+
+form > * {
+	margin-left: 20px;
+}
+
+label {
+	display: inline-block;
+	width: 100px;
+}
